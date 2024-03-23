@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboard\dashboardController;
+use App\Http\Controllers\facturacion\facturacionController;
 use App\Http\Controllers\seguridad\loginController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,5 @@ Route::prefix('/')->controller(loginController::class)->group(function() {
 Route::prefix('admin')->middleware('auth')->controller(dashboardController::class)->group(function() {
     Route::get('', 'index')->name('develop');
 });
+
+Route::post('facturacion', [facturacionController::class,'facturacion'])->name('fact');

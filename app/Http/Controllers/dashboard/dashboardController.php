@@ -9,8 +9,6 @@ class dashboardController extends Controller
 {
     public function index()
     {
-        return 'La sesión se inicio correctamente. <br>
-            <a href="'. route('logout').'">cerrar sesión</a>
-        ';
+        return view('theme.adminskote.layout');
     }
 }
