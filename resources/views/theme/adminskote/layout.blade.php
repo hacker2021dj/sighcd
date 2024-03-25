@@ -21,7 +21,10 @@
         {{--  Begin page  --}}
         <div id="layout-wrapper">
             @include("theme.$theme.header")
-            @include("theme.$theme.aside")
+
+            <div class="vertical-menu">
+                @include("theme.$theme.aside")
+            </div>
 
             <div class="main-content">
                 <div class="page-content">
