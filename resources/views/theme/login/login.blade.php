@@ -7,6 +7,7 @@
 
     <title>Login</title>
     <link rel="stylesheet" href="{{asset("css/login.css")}}">
+
 </head>
 <body>
     <div class="wrapper">
@@ -14,7 +15,8 @@
 		<span class="bg-animate2"></span>
 		<div class="form-box login">
 			<h2 class="animation" style="--i:0; --j:21;">Login</h2>
-			<form method="post" action="{{route('login')}}">
+			<form method="post" action="{{route('login')}}" onload="document.frmAcceso.logina.focus()">
+                @csrf
 				<div class="input-box animation" style="--i:1; --j:22;">
 					<input type="text" name="usuario" value="{{old('usuario', 'admin')}}" placeholder="ingrese su usuario" required>
 					<label>Usuario</label>
@@ -65,5 +67,6 @@
 			<p class="animation" style="--i:18; --j:1;">Sistema Integral de Gestión de Historia Clinicas Digitales</p>
 		</div>
 	</div>
+    <script src="{{asset("js/login/evento.js")}}"></script>
 </body>
 </html>
