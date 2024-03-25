@@ -11,4 +11,8 @@ class dashboardController extends Controller
     {
         return view('theme.adminskote.layout');
     }
+
+    public function desarrollo() {
+        return view('errors.mantenimiento');
+    }
 }

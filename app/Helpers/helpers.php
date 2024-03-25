@@ -20,6 +20,16 @@ if (!function_exists('includeRouteFiles')) {
     }
 }
 
+if (!function_exists('modulo')) {
+    $valor = null;
+    function modulo($nombre = false) {
+        global $valor;
+        if ($nombre != null)
+            $valor = $nombre;
+        return $valor;
+    }
+}
+
     // if (!function_exists('getMenuActivo')) {
     //     function getMenuActivo($ruta,$gruupo) {
     //         if ((request()->url() == route($ruta) || $gruupo == request()->segment(1) ) && route($ruta) != route('developend')/*|| request()->segment(1)  */) {

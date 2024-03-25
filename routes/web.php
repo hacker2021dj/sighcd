@@ -14,7 +14,12 @@ Route::prefix('/')->controller(loginController::class)->group(function() {
 
 // RUTAS QUE PERMIEACCEDER A LAS FUNCIONES DEL SISTEMA UNA VEZ LOGEADO
 Route::prefix('admin')->middleware('auth')->controller(dashboardController::class)->group(function() {
-    Route::get('', 'index')->name('develop');
+    Route::get('', 'index')->name('menu');
+    Route::get('mantenimiento','desarrollo')->name('develop');
 });
 
 Route::post('facturacion', [facturacionController::class,'facturacion'])->name('fact');
+
+Route::middleware('auth')->group(function() {
+    includeRouteFiles(__DIR__.'/configuracionSunat/');
+});
