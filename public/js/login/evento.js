@@ -11,3 +11,9 @@ registerLink.onclick = () => {
 loginLink.onclick = () => {
     wrapper.classList.remove('active');
 }
+
+setTimeout(function () {
+    var alert = document.querySelector('.alert');
+    if (alert != null)
+        alert.remove();
+}, 5000);

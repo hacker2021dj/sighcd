@@ -18,6 +18,10 @@
     <body>
         @yield('content')
 
+        <script type="text/javascript">
+            var base_url = "{{Request::root()}}";
+        </script>
+
         <!-- App js -->
         <script src="{{asset("assets/theme/$theme/js/plugin.js")}}"></script>
 

@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 // RUTA QUE SE USA PARA PARA LAS OPCIONES DE LOGIN Y LOGOUT
 Route::prefix('/')->controller(loginController::class)->group(function() {
-    Route::get('', 'index');
-    Route::post('', 'login')->name('login');
+    Route::get('', 'index')->name('login');
+    Route::post('login', 'login')->name('login_post');
     Route::get('cerrar', 'logout')->name('logout');
 });
 
@@ -22,4 +22,5 @@ Route::post('facturacion', [facturacionController::class,'facturacion'])->name('
 
 Route::middleware('auth')->group(function() {
     includeRouteFiles(__DIR__.'/configuracionSunat/');
+    includeRouteFiles(__DIR__.'/seguridad/');
 });

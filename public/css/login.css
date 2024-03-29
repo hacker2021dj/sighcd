@@ -354,3 +354,8 @@ body {
     padding: 0 60px;
   }
 }
+
+.color-alert {
+    color: red;
+    font-size: 12pt;
+}

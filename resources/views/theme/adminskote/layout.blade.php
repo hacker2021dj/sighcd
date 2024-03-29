@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <title>@yield('title', 'SIGHCD') | SIGHCD</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}"/>
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset("assets/theme/$theme/images/favicon.ico")}}">
 
@@ -15,6 +16,8 @@
         <link href="{{asset("assets/theme/$theme/css/app.min.css")}}" id="app-style" rel="stylesheet" type="text/css"/>
 
         @yield('styles')
+
+        <link href="{{asset("css/custom.css")}}"rel="stylesheet" type="text/css"/>
     </head>
 
     <body data-sidebar="dark">
@@ -47,6 +50,10 @@
         </div>
         {{-- End Right Sidebar   --}}
 
+        <script>
+            var base_url = "{{Request::root()}}";
+        </script>
+
         <!-- App js -->
         <script src="{{asset("assets/theme/$theme/js/plugin.js")}}"></script>
         <!-- JAVASCRIPT -->
@@ -56,8 +63,13 @@
         <script src="{{asset("assets/theme/$theme/libs/simplebar/simplebar.min.js")}}"></script>
         <script src="{{asset("assets/theme/$theme/libs/node-waves/waves.min.js")}}"></script>
 
+        <script src="{{asset("assets/theme/$theme/libs/jquery-ui-dist/jquery-ui.min.js")}}"></script>
+
         <!-- App js -->
         <script src="{{asset("assets/theme/$theme/js/app.js")}}"></script>
 
+        <script src="{{asset("assets/js/funciones.js")}}"></script>
+
         @yield('scripts')
     </body>
+</html>
