@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Login</title>
+    <link rel="stylesheet" href="{{asset("assets/theme/$theme/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/login.css")}}">
 
 </head>
@@ -14,8 +15,18 @@
 		<span class="bg-animate"></span>
 		<span class="bg-animate2"></span>
 		<div class="form-box login">
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade color-alert show">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">&times;</button>
+                </div>
+            @endif
 			<h2 class="animation" style="--i:0; --j:21;">Login</h2>
-			<form method="post" action="{{route('login')}}" onload="document.frmAcceso.logina.focus()">
+			<form method="post" action="{{route('login_post')}}" onload="document.frmAcceso.logina.focus()">
                 @csrf
 				<div class="input-box animation" style="--i:1; --j:22;">
 					<input type="text" name="usuario" value="{{old('usuario', 'admin')}}" placeholder="ingrese su usuario" required>
@@ -67,6 +78,7 @@
 			<p class="animation" style="--i:18; --j:1;">Sistema Integral de Gestión de Historia Clinicas Digitales</p>
 		</div>
 	</div>
+    <script src="{{asset("assets/theme/$theme/libs/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("js/login/evento.js")}}"></script>
 </body>
 </html>

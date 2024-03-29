@@ -7,13 +7,9 @@ use Illuminate\Http\Request;
 
 class empresasController extends Controller
 {
-     private $modulo = '';
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $this->modulo = modulo();
+        $this->modulo = 'empresas';
         return view('configuracionSunat.empresas.index');
     }
 

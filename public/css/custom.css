@@ -1,0 +1,57 @@
+.modal{
+    left: 15%;
+    width: 80% !important;
+ }
+
+.modal-backdrop {
+    visibility: hidden !important;
+}
+.modal.in {
+    background-color: rgba(61, 60, 60, 0.5);
+}
+
+@media (max-width: 992px) {
+    .modal{
+        left: 0% !important;
+        width: 100% !important;
+    }
+}
+
+.table td, .table th {
+    padding: .30rem !important;
+}
+
+input.numeric::-webkit-inner-spin-button,
+input.numeric::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input.numeric { -moz-appearance:textfield; }
+
+label.requerido::after{
+    content: " * ";
+    color: red;
+    font-size: 13pt;
+}
+
+.text-person {
+    color: rgb(255, 0, 0);
+    display: grid;
+    text-align: center;
+    font-size: 8pt;
+}
+
+.centro {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-width {
+    width: 100% !important;
+}
+
+.btndos {
+    width: 5rem;
+}
