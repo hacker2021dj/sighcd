@@ -19,3 +19,11 @@ function mostrarModal(tipo, modulo, titulo, ruta, datos, func = '') {
         (func != '') ? func(response) : '';
     }
 }
+
+function select2() {
+    $('.select2').select2({
+        placeholder: 'Seleccione Opción',
+        allowClear: true,
+        //minimumInputLength: 1,
+    });
+}

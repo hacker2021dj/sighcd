@@ -27,6 +27,7 @@ class validacionMenus extends FormRequest
             'codigo'        => 'required|max:15|unique:menus,codigo,'.$id,
             'descripcion'   => 'required|max:100|unique:menus,descripcion,'.$id,
             'indice'        => 'required|max:3|unique:menus,indice,'.$id,
+            'icono'         => 'nullable|max:50',
         ];
     }
 }
