@@ -6,6 +6,7 @@ use App\Models\admin\roles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Session;
 use Laravel\Sanctum\HasApiTokens;
 
 class usuario extends Authenticatable
@@ -20,6 +21,15 @@ class usuario extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(roles::class, 'usuario_rol');
+        return $this->belongsToMany(roles::class, 'model_has_roles','model_id','role_id');
+    }
+
+    public function setSession($roles) {
+        Session::put([
+            'id_rol'    => $roles[0]['id'],
+            'rol_name'  => $roles[0]['nombre'],
+            'user_name' => $this->name,
+            'user'      => $this->usuario,
+        ]);
     }
 }
