@@ -140,11 +140,11 @@
 
         $('#icono').on('blur', function(e) {
             e.preventDefault();
-            $('#mostrar_icon').removeClass().addClass(this.value);
+            var icono = ((this.value).split('-')[0] == 'mdi') ? 'mdi ' + this.value : this.value;
+            this.value = icono;
+            $('#mostrar_icon').removeClass().addClass(icono);
         });
     }
-
-
 
     //*********************************************
     //   FUNCION QUE PERMITE LIMPIAR LOS VALORES  *

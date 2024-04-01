@@ -27,7 +27,7 @@ class validacionSubMenus extends FormRequest
         $id =  ($this->request->get('id')) ?  Crypt::decrypt($this->request->get('id')) : null;
         return [
             'id_menus'       => 'required|numeric',
-            'codigo'        => 'required|max:15|unique:submenus,codigo,'.$id,
+            'codigo'        => 'required|max:15|unique:listbaritems,codigo,'.$id,
             'descripcion'   => [
                                     'required',
                                     'max:100',
@@ -35,7 +35,7 @@ class validacionSubMenus extends FormRequest
                                 ],
             //'required|max:100|unique:submenus,descripcion,'.$id,
             // 'indice'        => 'required|max:20|unique:submenus,indice,'.$id,
-            'grupo'         =>  'nullable|max:100,|unique:submenus,grupo,'.$id,
+            'grupo'         =>  'nullable|max:100,|unique:listbaritems,grupo,'.$id,
             'ruta'          => [
                                     'required',
                                     'max:100',

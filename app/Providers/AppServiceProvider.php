@@ -23,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('theme', 'adminskote');
 
+        View::composer('theme.adminskote.aside', function($view) {
+            $menus = menus::getMenus(true);
+            $view->with('menus',$menus);
+        });
+
         View::composer(['seguridad.submodulos.index'], function ($view) {
             $menus = menus::all();
             $view->with('menus', $menus);

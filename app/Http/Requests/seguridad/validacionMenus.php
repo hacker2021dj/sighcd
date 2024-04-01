@@ -24,9 +24,9 @@ class validacionMenus extends FormRequest
     {
         $id = ($this->request->get('id')) ?  Crypt::decrypt($this->request->get('id')) : null;
         return [
-            'codigo'        => 'required|max:15|unique:menus,codigo,'.$id,
-            'descripcion'   => 'required|max:100|unique:menus,descripcion,'.$id,
-            'indice'        => 'required|max:3|unique:menus,indice,'.$id,
+            'codigo'        => 'required|max:15|unique:listbargroup,codigo,'.$id,
+            'descripcion'   => 'required|max:100|unique:listbargroup,descripcion,'.$id,
+            'indice'        => 'required|max:3|unique:listbargroup,indice,'.$id,
             'icono'         => 'nullable|max:50',
         ];
     }
